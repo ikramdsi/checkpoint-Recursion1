@@ -1,0 +1,26 @@
+function isPalindrome(word) {
+    // Convertir le mot en minuscules pour ignorer la casse
+    word = word.toLowerCase();
+    
+    // Initialiser les indices pour comparer les caractères aux extrémités du mot
+    let left = 0;
+    let right = word.length - 1;
+    
+    while (left < right) {
+        // Comparer les caractères aux extrémités
+        if (word[left] !== word[right]) {
+            return false;  // S'il y a une différence, le mot n'est pas un palindrome
+        }
+        
+        // Avancer vers le centre du mot
+        left++;
+        right--;
+    }
+    
+    return true;  // Si nous avons parcouru tout le mot sans différence, c'est un palindrome
+}
+
+// Exemples d'utilisation :
+console.log(isPalindrome("racecar"));  
+console.log(isPalindrome("hello"));    
+console.log(isPalindrome("Deified"));  
